@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:background="@color/colorPrimary">
+
+                    <TextView
+                        android:id="@+id/tv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Volver"
+                        android:textSize="@dimen/content"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="normal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:layout_alignParentLeft="true"
+                        android:visibility="invisible"/>
+
+                    <TextView
+                        android:id="@+id/tv_title_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Menú Principal"
+                        android:textSize="@dimen/subtitle"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tv_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Siguiente"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/content"
+                        android:textStyle="normal"
+                        android:layout_marginRight="16dp"
+                        android:layout_alignParentRight="true"
+                        android:visibility="invisible"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:gravity="center_vertical"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <FrameLayout android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow"/>
+
+                <!--
+                <View
+                    android:id="@+id/v_tab"
+                    android:layout_width="80dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow_tab"/>
+                    -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/activity_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:context=".mvp.activities.LoginActivity"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@color/white"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:background="@color/blackMatte"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="@dimen/title"
+                                android:layout_marginTop="20dp"
+                                android:id="@+id/tv_name"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_below="@+id/tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="@dimen/content"
+                                android:id="@+id/tv_rol"
+                                android:textStyle="normal"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_below="@+id/rl_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/fourth_text">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal|center_vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_magnament"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_marginBottom="16dp"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true"
+                                        android:layout_margin="8dp"
+                                        android:visibility="gone">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:padding="8dp"
+                                            android:gravity="center_vertical">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:src="@drawable/ic_magnament"
+                                                android:layout_gravity="center_vertical|center_horizontal"/>
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_magnament"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/black"
+                                                android:textAlignment="center"
+                                                android:text="Gestión de Operaciones"
+                                                android:layout_marginTop="8dp"/>
+
+                                        </LinearLayout>
+
+
+                                    </android.support.v7.widget.CardView>
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_register"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_marginBottom="16dp"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true"
+                                        android:layout_margin="8dp"
+                                        android:visibility="gone">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:padding="8dp"
+                                            android:gravity="center_vertical">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:src="@drawable/ic_register"
+                                                android:layout_gravity="center_vertical|center_horizontal"/>
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_register"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/black"
+                                                android:textAlignment="center"
+                                                android:text="Registro"
+                                                android:layout_marginTop="8dp"/>
+
+                                        </LinearLayout>
+
+                                    </android.support.v7.widget.CardView>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_report"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_marginBottom="16dp"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true"
+                                        android:layout_margin="8dp"
+                                        android:visibility="gone">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:padding="8dp"
+                                            android:gravity="center_vertical">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:src="@drawable/ic_chart"
+                                                android:layout_gravity="center_vertical|center_horizontal"/>
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_report"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/black"
+                                                android:textAlignment="center"
+                                                android:text="Gestión de Operaciones"
+                                                android:layout_marginTop="8dp"/>
+
+                                        </LinearLayout>
+
+
+                                    </android.support.v7.widget.CardView>
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_search"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_marginBottom="16dp"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true"
+                                        android:layout_margin="8dp"
+                                        android:visibility="gone">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:padding="8dp"
+                                            android:gravity="center_vertical">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:src="@drawable/ic_search"
+                                                android:layout_gravity="center_vertical|center_horizontal"/>
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:id="@+id/tv_search"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold"
+                                                android:textColor="@color/black"
+                                                android:textAlignment="center"
+                                                android:text="Registro"
+                                                android:layout_marginTop="8dp"/>
+
+                                        </LinearLayout>
+
+                                    </android.support.v7.widget.CardView>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                        </RelativeLayout>
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/civ_photo"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="70dp"
+                            app:civ_border_color="@color/white"
+                            app:civ_border_overlay="true"
+                            app:civ_border_width="3dp"
+                            android:visibility="visible"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

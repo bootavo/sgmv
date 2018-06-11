@@ -1,0 +1,33 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- CircleAnimation -->
+    <dimen name="rippleStrokeWidth">2dp</dimen>
+    <dimen name="rippleRadius">64dp</dimen>
+
+    <!-- Toolbat Smarthpone -->
+    <dimen name="toolbar_title">14sp</dimen>
+    <dimen name="toolbar_height">55dp</dimen>
+
+    <dimen name="btn_title">14dp</dimen>
+    <dimen name="btn_height">38dp</dimen>
+
+    <!-- Toolbat Tablet -->
+    <dimen name="toolbar_title_tab">24sp</dimen>
+    <dimen name="toolbar_height_tab">80dp</dimen>
+
+    <dimen name="btn_title_tab">32dp</dimen>
+    <dimen name="btn_height_tab">80dp</dimen>
+
+    <!-- Text -->
+    <dimen name="bigtitle">24dp</dimen>
+    <dimen name="title">20dp</dimen>
+    <dimen name="subtitle">16dp</dimen>
+    <dimen name="content">14dp</dimen>
+
+    <!-- Height FragmentSettings Cells -->
+    <dimen name="height_cells">50dp</dimen>
+
+</resources>
