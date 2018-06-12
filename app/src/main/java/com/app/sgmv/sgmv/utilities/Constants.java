@@ -31,9 +31,19 @@ public class Constants {
     public static String ERROR = "ERROR";
 
     //MENU OPTIONS
-    public static String MAGNAMENT = "Gestión de Operaciones";
-    public static String REGISTER = "Registro";
-    public static String REPORT = "Reportes";
-    public static String SEARCH = "Búsqueda";
+    public static String TAG_MODULE = "module";
+
+    public static final String MAGNAMENT = "Gestión de Operaciones";
+    public static final String REGISTER = "Registro";
+    public static final String REPORT = "Reportes";
+    public static final String SEARCH = "Búsqueda";
+
+    public static String FAILURE = "Averías";
+    public static String USERS = "Usuarios";
+    public static String SAFE = "Seguros";
+    public static String MAINTENANCE = "Mantenimiento";
+    public static String VEHICLE = "Vehículos";
+    public static String COSTOS = "Costos";
+
 
 }

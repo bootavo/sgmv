@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:src="@drawable/ic_arrow_back_white"
+                        android:text="Volver"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/content"
+                        android:textStyle="normal" />
+                    <!-- android:tint="@color/primary_text"
+                        android:backgroundTint="@color/primary_text" -->
+
+                    <TextView
+                        android:id="@+id/tv_title_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Menú Principal"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/title"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tv_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:text="Siguiente"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/content"
+                        android:textStyle="normal"
+                        android:visibility="invisible" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow" />
+
+                <!--
+                <View
+                    android:id="@+id/v_tab"
+                    android:layout_width="80dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow_tab"/>
+                    -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/activity_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@color/white"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical"
+                        tools:context=".mvp.activities.LoginActivity">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/rl_header"
+                            android:background="@color/fourth_text">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_failure"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_margin="8dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:visibility="visible"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:layout_gravity="center_vertical|center_horizontal"
+                                                android:src="@drawable/ic_failure" />
+
+                                            <TextView
+                                                android:id="@+id/tv_failure"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="8dp"
+                                                android:text="Averías"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/black"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold" />
+
+                                        </LinearLayout>
+
+
+                                    </android.support.v7.widget.CardView>
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_users"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_margin="8dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:visibility="visible"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:layout_gravity="center_vertical|center_horizontal"
+                                                android:src="@drawable/ic_users" />
+
+                                            <TextView
+                                                android:id="@+id/tv_users"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="8dp"
+                                                android:text="Usuarios"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/black"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold" />
+
+                                        </LinearLayout>
+
+                                    </android.support.v7.widget.CardView>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_safe"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_margin="8dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:visibility="visible"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:layout_gravity="center_vertical|center_horizontal"
+                                                android:src="@drawable/ic_safe" />
+
+                                            <TextView
+                                                android:id="@+id/tv_safe"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="8dp"
+                                                android:text="Seguros"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/black"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold" />
+
+                                        </LinearLayout>
+
+
+                                    </android.support.v7.widget.CardView>
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_maintenance"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_margin="8dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:visibility="visible"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:layout_gravity="center_vertical|center_horizontal"
+                                                android:src="@drawable/ic_maintenance" />
+
+                                            <TextView
+                                                android:id="@+id/tv_maintenance"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="8dp"
+                                                android:text="Mantenimiento"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/black"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold" />
+
+                                        </LinearLayout>
+
+                                    </android.support.v7.widget.CardView>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_vehicle"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_margin="8dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:visibility="visible"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:layout_gravity="center_vertical|center_horizontal"
+                                                android:src="@drawable/ic_vehicle" />
+
+                                            <TextView
+                                                android:id="@+id/tv_vehicle"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="8dp"
+                                                android:text="Vehículos"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/black"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold" />
+
+                                        </LinearLayout>
+
+
+                                    </android.support.v7.widget.CardView>
+
+                                    <android.support.v7.widget.CardView
+                                        android:id="@+id/cv_costs"
+                                        android:layout_width="120dp"
+                                        android:layout_height="120dp"
+                                        android:layout_margin="8dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:visibility="gone"
+                                        app:cardElevation="5dp"
+                                        app:cardUseCompatPadding="true">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical"
+                                            android:padding="8dp">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:layout_gravity="center_vertical|center_horizontal"
+                                                android:src="@drawable/ic_costs" />
+
+                                            <TextView
+                                                android:id="@+id/tv_costs"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="8dp"
+                                                android:text="Costos"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/black"
+                                                android:textSize="10sp"
+                                                android:textStyle="bold" />
+
+                                        </LinearLayout>
+
+                                    </android.support.v7.widget.CardView>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

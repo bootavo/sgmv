@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiRetrofitClient {
 
-    public static final String BASE_URL = "http://190.117.250.173:8080/Service_Fia_Usmp/";
+    public static final String BASE_URL = "http://190.117.250.173:8080/sgmv/";
 
     public static Retrofit retrofit = null;
 

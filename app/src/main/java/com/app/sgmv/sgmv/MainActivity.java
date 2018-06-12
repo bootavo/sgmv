@@ -2,7 +2,6 @@ package com.app.sgmv.sgmv;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
@@ -11,21 +10,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.sgmv.sgmv.entities.LoginResponse;
-import com.app.sgmv.sgmv.entities.Modules;
+import com.app.sgmv.sgmv.utilities.BaseActivity;
 import com.app.sgmv.sgmv.utilities.Constants;
 import com.app.sgmv.sgmv.utilities.GlideApp;
 import com.app.sgmv.sgmv.utilities.PreferencesHelper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
-import jp.wasabeef.glide.transformations.BlurTransformation;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @BindView(R.id.tv_name) TextView mName;
     @BindView(R.id.tv_rol) TextView mRol;
@@ -76,16 +71,16 @@ public class MainActivity extends AppCompatActivity {
                     if(menuItem[j].equalsIgnoreCase(loginResponse.getResults().getModules().get(i).getModules())){
                         Log.d(TAG, loginResponse.getResults().getModules().get(i).getModules());
                         switch (loginResponse.getResults().getModules().get(i).getModules()){
-                            case "Gestión de Operaciones":
+                            case Constants.MAGNAMENT:
                                 mMagnament.setVisibility(View.VISIBLE);
                                 break;
-                            case "Registro":
+                            case Constants.REGISTER:
                                 mRegister.setVisibility(View.VISIBLE);
                                 break;
-                            case "Reportes":
+                            case Constants.REPORT:
                                 mReport.setVisibility(View.VISIBLE);
                                 break;
-                            case "Búsqueda":
+                            case Constants.SEARCH:
                                 mSearch.setVisibility(View.VISIBLE);
                                 break;
                         }
@@ -115,19 +110,22 @@ public class MainActivity extends AppCompatActivity {
     public void onCllick(View view) {
         switch (view.getId()){
             case R.id.cv_magnament:
-                Toast.makeText(ctx, "Magnament", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ctx, Constants.MAGNAMENT, Toast.LENGTH_SHORT).show();
+                next(Constants.TAG_MODULE, Constants.MAGNAMENT, SubModulesActivity.class, false);
                 break;
             case R.id.cv_register:
-                Toast.makeText(ctx, "Register", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ctx, Constants.REGISTER, Toast.LENGTH_SHORT).show();
+                next(Constants.TAG_MODULE, Constants.REGISTER, SubModulesActivity.class, false);
                 break;
             case R.id.cv_report:
-                Toast.makeText(ctx, "Report", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ctx, Constants.REPORT, Toast.LENGTH_SHORT).show();
+                next(Constants.TAG_MODULE, Constants.REPORT, SubModulesActivity.class, false);
                 break;
             case R.id.cv_search:
-                Toast.makeText(ctx, "Search", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ctx, Constants.SEARCH, Toast.LENGTH_SHORT).show();
+                next(Constants.TAG_MODULE, Constants.SEARCH, SubModulesActivity.class, false);
                 break;
         }
     }
-
 
 }

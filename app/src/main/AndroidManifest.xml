@@ -29,6 +29,19 @@
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme"/>
 
+        <activity
+            android:name=".SubModulesActivity"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBarTheme"/>
+
+        <activity
+            android:name=".FailureActivity"
+            android:alwaysRetainTaskState="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
