@@ -19,7 +19,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize">
+                android:layout_height="@dimen/toolbar_height">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                         android:layout_height="match_parent"
                         android:text="Siguiente"
                         android:textColor="@color/secondary_text"
-                        android:textSize="@dimen/content"
+                        android:textSize="@dimen/subtitle"
                         android:textStyle="normal"
                         android:layout_marginRight="16dp"
                         android:layout_alignParentRight="true"
@@ -74,19 +74,6 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="@drawable/toolbar_dropshadow"/>
-
-                <!--
-                <View
-                    android:id="@+id/v_tab"
-                    android:layout_width="80dp"
-                    android:layout_height="3dp"
-                    android:background="@drawable/toolbar_dropshadow_tab"/>
-                    -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -332,6 +319,10 @@
                     </RelativeLayout>
 
                 </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow"/>
 
             </FrameLayout>
 

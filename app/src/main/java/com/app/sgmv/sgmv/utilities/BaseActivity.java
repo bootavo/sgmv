@@ -8,6 +8,8 @@ import com.app.sgmv.sgmv.R;
 
 import java.io.Serializable;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by bootavo on 20/11/2017.
  */
@@ -19,7 +21,6 @@ public abstract class BaseActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         /*
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/MMRTEXT.TTF")
@@ -28,6 +29,10 @@ public abstract class BaseActivity extends AppCompatActivity{
         );
         */
 
+    }
+
+    public void initButterKinife(){
+        ButterKnife.bind(this);
     }
 
     //Method better thet start activity

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_arrow_back_white"
+                        android:text="Volver"
+                        android:textSize="@dimen/content"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="normal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:layout_alignParentLeft="true"
+                        android:visibility="visible"/>
+
+                    <TextView
+                        android:id="@+id/tv_title_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Registro de Avería"
+                        android:textSize="@dimen/title"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tv_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Siguiente"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/subtitle"
+                        android:textStyle="normal"
+                        android:layout_marginRight="16dp"
+                        android:layout_alignParentRight="true"
+                        android:visibility="invisible"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:gravity="center_vertical"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1 de 4"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:textSize="@dimen/subtitle"
+                        android:textStyle="normal"
+                        android:textColor="@color/primary_text"
+                        android:layout_marginTop="10dp"
+                        android:padding="16dp"/>
+
+                    <!-- FailureReport -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal">
+
+                        <!-- Driver -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="5">
+
+                            <EditText
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="4"
+                                android:textSize="@dimen/subtitle"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:hint="Buscar conductor"/>
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:backgroundTint="@color/colorPrimary"
+                                android:src="@drawable/ic_search_menu"/>
+
+                        </LinearLayout>
+
+                        <!-- Tract -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="5">
+
+                            <EditText
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="4"
+                                android:textSize="@dimen/subtitle"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:hint="Buscar tracto"/>
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:backgroundTint="@color/colorPrimary"
+                                android:src="@drawable/ic_search_menu"/>
+
+                        </LinearLayout>
+
+                        <!-- Semi Trailer -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="5">
+
+                            <EditText
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="4"
+                                android:textSize="@dimen/subtitle"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:hint="Buscar semi remolque"/>
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:backgroundTint="@color/colorPrimary"
+                                android:src="@drawable/ic_search_menu"/>
+
+                        </LinearLayout>
+
+                        <!-- Date -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="5">
+
+                            <EditText
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="4"
+                                android:textSize="@dimen/subtitle"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:hint="Fecha"/>
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:backgroundTint="@color/colorPrimary"
+                                android:src="@drawable/ic_search_menu"/>
+
+                        </LinearLayout>
+
+                        <!-- Mileage -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="5">
+
+                            <EditText
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="4"
+                                android:textSize="@dimen/subtitle"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:hint="Ingrese el kilometraje"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/subtitle"
+                                android:text="km"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- -->
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow"/>
+
+                <View
+                    android:id="@+id/v_tab"
+                    android:layout_width="80dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow_tab"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

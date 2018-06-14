@@ -1,4 +1,4 @@
-package com.app.sgmv.sgmv;
+package com.app.sgmv.sgmv.activities;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.sgmv.sgmv.R;
 import com.app.sgmv.sgmv.utilities.BaseActivity;
 import com.app.sgmv.sgmv.utilities.Constants;
 

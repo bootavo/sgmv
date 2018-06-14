@@ -1,4 +1,4 @@
-package com.app.sgmv.sgmv;
+package com.app.sgmv.sgmv.activities;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.sgmv.sgmv.R;
 import com.app.sgmv.sgmv.utilities.BaseActivity;
 import com.app.sgmv.sgmv.utilities.Constants;
 
@@ -37,7 +38,7 @@ public class SubModulesActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub_modules);
-        ButterKnife.bind(this);
+        initButterKinife();
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +66,7 @@ public class SubModulesActivity extends BaseActivity{
                 switch (module){
                     case Constants.MAGNAMENT:
                         next(Constants.TAG_MODULE, Constants.FAILURE, FailureActivity.class, false);
+                        next(RegisterNewFailure.class, false);
                         break;
                     case Constants.REGISTER:
                         //

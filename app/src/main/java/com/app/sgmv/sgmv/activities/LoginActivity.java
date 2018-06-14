@@ -1,7 +1,6 @@
-package com.app.sgmv.sgmv;
+package com.app.sgmv.sgmv.activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.sgmv.sgmv.R;
 import com.app.sgmv.sgmv.apis.ApiRetrofitClient;
 import com.app.sgmv.sgmv.entities.LoginResponse;
 import com.app.sgmv.sgmv.entities.User;
@@ -47,7 +47,7 @@ public class LoginActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ButterKnife.bind(this);
+        initButterKinife();
         ctx = getApplicationContext();
 
         GlideApp

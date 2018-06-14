@@ -75,19 +75,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="@drawable/toolbar_dropshadow" />
-
-                <!--
-                <View
-                    android:id="@+id/v_tab"
-                    android:layout_width="80dp"
-                    android:layout_height="3dp"
-                    android:background="@drawable/toolbar_dropshadow_tab"/>
-                    -->
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -376,6 +363,11 @@
                     </RelativeLayout>
 
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow" />
 
             </FrameLayout>
 
