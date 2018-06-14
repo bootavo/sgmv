@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.sgmv.sgmv.utilities.BaseActivity;
 import com.app.sgmv.sgmv.utilities.Constants;
@@ -90,17 +91,31 @@ public class FailureActivity extends BaseActivity {
     }
 
     @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        if (collapsedMenu != null
-                && (!appBarExpanded || collapsedMenu.size() != 1)) {
-            //collapsed
-            collapsedMenu.add("Add")
-                    .setIcon(R.drawable.ic_arrow_back)
-                    .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-        } else {
-            //expanded
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (title){
+            case Constants.FAILURE:
+                switch (item.getItemId()) {
+                    case R.id.mf_new:
+                        Toast.makeText(this, title, Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.mf_search:
+                        Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return true;
+            case Constants.USERS:
+                switch (item.getItemId()) {
+                    case R.id.mf_new:
+                        Toast.makeText(this, title, Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.mf_search:
+                        Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onPrepareOptionsMenu(collapsedMenu);
     }
 
     public void eventUI(){

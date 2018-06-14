@@ -38,12 +38,11 @@ public class Constants {
     public static final String REPORT = "Reportes";
     public static final String SEARCH = "Búsqueda";
 
-    public static String FAILURE = "Averías";
-    public static String USERS = "Usuarios";
-    public static String SAFE = "Seguros";
-    public static String MAINTENANCE = "Mantenimiento";
-    public static String VEHICLE = "Vehículos";
-    public static String COSTOS = "Costos";
-
+    public static final String FAILURE = "Averías";
+    public static final String USERS = "Usuarios";
+    public static final String SAFE = "Seguros";
+    public static final String MAINTENANCE = "Mantenimiento";
+    public static final String VEHICLE = "Vehículos";
+    public static final String COSTOS = "Costos";
 
 }

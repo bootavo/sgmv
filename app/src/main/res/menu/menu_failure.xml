@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mf_new"
+        android:icon="@drawable/ic_add"
+        android:title="Registrar Avería"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/mf_search"
+        android:icon="@drawable/ic_search_menu"
+        android:title="Buscar Averías"
+        app:showAsAction="ifRoom"/>
 
 </menu>
