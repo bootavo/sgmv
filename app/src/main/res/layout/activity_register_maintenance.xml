@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:id="@+id/ll_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_arrow_back_white"
+                android:text="Volver"
+                android:textSize="@dimen/content"
+                android:textColor="@color/secondary_text"
+                android:textStyle="normal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:layout_alignParentLeft="true"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tv_title_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Registro de Mantenimiento"
+                android:textSize="@dimen/title"
+                android:textColor="@color/white"
+                android:textStyle="normal"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <TextView
+                android:id="@+id/tv_next"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Siguiente"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/subtitle"
+                android:textStyle="normal"
+                android:layout_marginRight="16dp"
+                android:layout_alignParentRight="true"
+                android:visibility="invisible"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:gravity="center_vertical"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@+id/ll_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <!-- FailureReportInterfaceport -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal">
+
+                        <!-- Maintenance -->
+
+                        <EditText
+                            android:id="@+id/et_cod_order"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/subtitle"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Código de orden"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="5"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:id="@+id/et_failure_report"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:textSize="@dimen/subtitle"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:hint="Reporte de Falla"
+                                android:clickable="false"
+                                android:focusable="false"/>
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:id="@+id/fab_failure_report"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:backgroundTint="@color/colorPrimary"
+                                android:src="@drawable/ic_date"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="5"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:id="@+id/et_date"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:textSize="@dimen/subtitle"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:hint="Fecha"
+                                android:clickable="false"
+                                android:focusable="false"/>
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:id="@+id/fab_date"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:backgroundTint="@color/colorPrimary"
+                                android:src="@drawable/ic_date"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="textStart"
+                            android:text="Tipo de mantenimiento"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="20dp"
+                            android:textSize="@dimen/subtitle"
+                            android:paddingLeft="20dp"/>
+
+                        <RadioGroup
+                            android:id="@+id/rg_kind_maintenance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:layout_marginTop="10dp">
+
+                            <RadioButton
+                                android:id="@+id/rb_prevent"
+                                android:text="Preventivo"
+                                android:textSize="@dimen/content"
+                                android:buttonTint="@color/colorPrimary"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layoutDirection="rtl"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start|center"
+                                />
+
+                            <RadioButton
+                                android:id="@+id/rb_corrective"
+                                android:textSize="@dimen/content"
+                                android:buttonTint="@color/colorPrimary"
+                                android:text="Correctivo"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layoutDirection="rtl"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start|center"
+                                android:layout_marginLeft="30dp"
+                                />
+
+                        </RadioGroup>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="textStart"
+                            android:text="Prioridad"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="20dp"
+                            android:textSize="@dimen/subtitle"
+                            android:paddingLeft="20dp"/>
+
+                        <RadioGroup
+                            android:id="@+id/rg_priority"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:layout_marginTop="10dp">
+
+                            <RadioButton
+                                android:id="@+id/rb_normal"
+                                android:text="Normal"
+                                android:textSize="@dimen/content"
+                                android:buttonTint="@color/colorPrimary"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layoutDirection="ltr"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start|center"
+                                android:layout_marginLeft="30dp"
+                                />
+
+                            <RadioButton
+                                android:id="@+id/rb_urgency"
+                                android:textSize="@dimen/content"
+                                android:buttonTint="@color/colorPrimary"
+                                android:text="Urgencia"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layoutDirection="ltr"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start|center"
+                                android:layout_marginLeft="30dp"
+                                />
+
+                            <RadioButton
+                                android:id="@+id/rb_emergency"
+                                android:textSize="@dimen/content"
+                                android:buttonTint="@color/colorPrimary"
+                                android:text="Emergencia"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layoutDirection="ltr"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start|center"
+                                android:layout_marginLeft="30dp"
+                                />
+
+                        </RadioGroup>
+
+                        <EditText
+                            android:id="@+id/et_activities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/subtitle"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Actividades"/>
+
+                        <EditText
+                            android:id="@+id/et_defects"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/subtitle"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Defectos"/>
+
+                        <EditText
+                            android:id="@+id/et_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/subtitle"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Precio"/>
+
+                        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+                            android:id="@+id/btn_register"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_marginBottom="40dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/bg_button_bordered_full"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="Registrar"
+                            android:textColor="@color/white"
+                            android:theme="@style/BluePrimaryButton"
+                            app:finalCornerAngle="100dp"
+                            app:initialCornerAngle="100dp"
+                            app:spinning_bar_color="@color/colorPrimary"
+                            app:spinning_bar_padding="3dp"
+                            app:spinning_bar_width="3dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"/>
+
+                    </LinearLayout>
+                    <!-- -->
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/toolbar_dropshadow"
+        android:layout_below="@+id/ll_toolbar"/>
+
+</RelativeLayout>

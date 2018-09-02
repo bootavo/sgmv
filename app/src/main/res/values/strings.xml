@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">sgmv</string>
+    <string name="app_name">Transport 420</string>
+
+    <!-- ImagePicker -->
+    <string name="pick_image_intent_text">Selecciona una imagen</string>
+
 </resources>

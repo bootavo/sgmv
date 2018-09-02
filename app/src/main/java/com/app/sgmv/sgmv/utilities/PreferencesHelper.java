@@ -3,9 +3,7 @@ package com.app.sgmv.sgmv.utilities;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.app.sgmv.sgmv.entities.LoginResponse;
-import com.app.sgmv.sgmv.entities.Modules;
-import com.app.sgmv.sgmv.entities.User;
+import com.app.sgmv.sgmv.entities.user.LoginResponse;
 import com.google.gson.Gson;
 
 public class PreferencesHelper {

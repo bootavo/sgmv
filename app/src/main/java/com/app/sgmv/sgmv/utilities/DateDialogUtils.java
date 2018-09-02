@@ -11,13 +11,8 @@ import android.widget.DatePicker;
 
 import com.app.sgmv.sgmv.R;
 import com.app.sgmv.sgmv.listeners.OnDialogResult;
-import com.rackspira.kristiawan.rackmonthpicker.RackMonthPicker;
 
 import java.util.Calendar;
-import java.util.Locale;
-
-import fabrica.vfconsulting.sigap.R;
-import fabrica.vfconsulting.sigap.listeners.OnDialogResult;
 
 public class DateDialogUtils {
 
@@ -27,17 +22,6 @@ public class DateDialogUtils {
     static DatePickerDialog dateDialog;
 
     public static void showDialog(final Context context, final Activity activity, boolean cancelable, final OnDialogResult onDialogResult){
-
-        Calendar cal = Calendar.getInstance();
-        int yeara = cal.get(Calendar.YEAR);
-        int montha = cal.get(Calendar.MONTH);
-        int daya = cal.get(Calendar.DAY_OF_MONTH);
-
-        //Theme_AppCompat_Light_Dialog_Alert
-        //Theme_AppCompat_Light_Dialog
-        dateDialog = new DatePickerDialog(context, R.style.Theme_AppCompat_Light_Dialog, mDataSetListener, yeara, montha, daya);
-        //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dateDialog.show();
 
         mDataSetListener = (view, year, month, day) -> {
 
@@ -53,9 +37,19 @@ public class DateDialogUtils {
             if (day<10){
                 day_test = "0"+day;
             }
-
+            onDialogResult.onOk(year+"", month_test, day_test);
         };
 
+        Calendar cal = Calendar.getInstance();
+        int yeara = cal.get(Calendar.YEAR);
+        int montha = cal.get(Calendar.MONTH);
+        int daya = cal.get(Calendar.DAY_OF_MONTH);
+
+        //Theme_AppCompat_Light_Dialog_Alert
+        //Theme_AppCompat_Light_Dialog
+        dateDialog = new DatePickerDialog(context, R.style.Theme_AppCompat_Light_Dialog, mDataSetListener, yeara, montha, daya);
+        //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dateDialog.show();
     }
 
     public static void dimissDialog(){
@@ -94,6 +88,7 @@ public class DateDialogUtils {
         dpd.show();
     }
 
+    /*
     public static void showMonthPicker(Activity activity, final OnDialogResult onDialogResult){
         Locale spanish = new Locale("es", "ES");
         Locale current = ConfigurationCompat.getLocales(activity.getResources().getConfiguration()).get(0);
@@ -114,6 +109,6 @@ public class DateDialogUtils {
                     onDialogResult.onCancel();
                     rackMonthPicker.dismiss();
                 }).show();
-    }
+    }*/
 
 }

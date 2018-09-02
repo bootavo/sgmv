@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_arrow_back_white"
+                        android:text="Volver"
+                        android:textSize="@dimen/content"
+                        android:textColor="@color/secondary_text"
+                        android:textStyle="normal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:layout_alignParentLeft="true"
+                        android:visibility="visible"/>
+
+                    <TextView
+                        android:id="@+id/tv_title_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Registro de Avería"
+                        android:textSize="@dimen/title"
+                        android:textColor="@color/white"
+                        android:textStyle="normal"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal|center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tv_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Siguiente"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/subtitle"
+                        android:textStyle="normal"
+                        android:layout_marginRight="16dp"
+                        android:layout_alignParentRight="true"
+                        android:visibility="invisible"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:gravity="center_vertical"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3 de 4"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:textSize="@dimen/subtitle"
+                        android:textStyle="normal"
+                        android:textColor="@color/primary_text"
+                        android:layout_marginTop="5dp"
+                        android:padding="8dp"/>
+
+                    <!-- FailureReportInterfaceport -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@color/blackMatte">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="20dp"
+                                android:text="3. Componente 'Llantas' "
+                                android:textColor="@color/white"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <!-- Revisar Ajuste -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:text="Revisar ajuste"
+                                android:textSize="@dimen/subtitle"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text"/>
+
+                            <Switch
+                                android:id="@+id/sw_revisar_ajuste"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SCBSwitch"/>
+
+                        </LinearLayout>
+
+                        <!-- Corte y/o Averías -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:text="Corte y/o averías"
+                                android:textSize="@dimen/subtitle"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text"/>
+
+                            <Switch
+                                android:id="@+id/sw_corte_averias"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SCBSwitch"/>
+
+                        </LinearLayout>
+
+                        <!-- Revisar Presión Recomendada -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:text="Revisar presión recomendada"
+                                android:textSize="@dimen/subtitle"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"/>
+
+                            <Switch
+                                android:id="@+id/sw_revisar_presion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SCBSwitch"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rl_corona"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/et_corona"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:maxLength="1000"
+                                android:hint="ingrese una descripción"/>
+
+                        </LinearLayout>
+
+                        <!-- Cocada Baja -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:text="Cocada baja"
+                                android:textSize="@dimen/subtitle"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text"/>
+
+                            <Switch
+                                android:id="@+id/sw_cocada_baja"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SCBSwitch"/>
+
+                        </LinearLayout>
+
+                        <!-- LLanta Cambiada en Ruta -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:text="Llanta cambiada en ruta"
+                                android:textSize="@dimen/subtitle"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text"/>
+
+                            <Switch
+                                android:id="@+id/sw_llanta_cambiada"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SCBSwitch"/>
+
+                        </LinearLayout>
+
+                        <!-- Llanta Reportada con Fallas -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:text="Llanta reportada con fallas"
+                                android:textSize="@dimen/subtitle"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text"/>
+
+                            <Switch
+                                android:id="@+id/sw_llanta_reportada"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SCBSwitch"/>
+
+                        </LinearLayout>
+
+                        <!-- Otros Componentes -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:text="Otros componentes"
+                                android:textSize="@dimen/subtitle"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary_text"/>
+
+                            <Switch
+                                android:id="@+id/sw_otros_componentes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/SCBSwitch"/>
+
+                        </LinearLayout>
+
+                        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+                            android:id="@+id/btn_next"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_marginBottom="40dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/bg_button_bordered"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="Siguiente"
+                            android:textColor="@color/colorPrimary"
+                            android:theme="@style/BluePrimaryButton"
+                            app:finalCornerAngle="100dp"
+                            app:initialCornerAngle="100dp"
+                            app:spinning_bar_color="@color/primaryTextColor"
+                            app:spinning_bar_padding="3dp"
+                            app:spinning_bar_width="3dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow"/>
+
+                <View
+                    android:id="@+id/v_tab"
+                    android:layout_width="80dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/toolbar_dropshadow_tab"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
