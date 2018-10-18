@@ -13,9 +13,9 @@ import android.widget.Toast;
 
 import com.app.sgmv.sgmv.R;
 import com.app.sgmv.sgmv.apis.ApiRetrofitClient;
-import com.app.sgmv.sgmv.entities.LoginResponse;
-import com.app.sgmv.sgmv.entities.User;
-import com.app.sgmv.sgmv.services.LoginInterface;
+import com.app.sgmv.sgmv.entities.user.LoginResponse;
+import com.app.sgmv.sgmv.entities.user.User;
+import com.app.sgmv.sgmv.services.UserInterface;
 import com.app.sgmv.sgmv.utilities.AnimationUtils;
 import com.app.sgmv.sgmv.utilities.BaseActivity;
 import com.app.sgmv.sgmv.utilities.Constants;
@@ -25,7 +25,6 @@ import com.bumptech.glide.request.RequestOptions;
 
 import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import retrofit2.Call;
@@ -57,7 +56,7 @@ public class LoginActivity extends BaseActivity{
                 .apply(RequestOptions.bitmapTransform(new BlurTransformation(15)))
                 .into(mBackground);
 
-        if (PreferencesHelper.getMyUserPref(ctx)!= null) {
+        if (PreferencesHelper.getMyUserPref(ctx) != null) {
             next(MainActivity.class, true);
         }
 
@@ -74,15 +73,13 @@ public class LoginActivity extends BaseActivity{
     }
 
     public void login() {
-
+        btnLogin.startAnimation();
         if(loginVerify()){
-            btnLogin.startAnimation();
-
             User login = new User();
             login.setUser(txtUsuario.getText().toString());
             login.setPassword(txtPassword.getText().toString());
 
-            LoginInterface mInterface = ApiRetrofitClient.getRetrofitClient().create(LoginInterface.class);
+            UserInterface mInterface = ApiRetrofitClient.getRetrofitClient().create(UserInterface.class);
             Call<LoginResponse> mCall = mInterface.login(login);
             mCall.enqueue(new Callback<LoginResponse>() {
                 @Override
@@ -102,6 +99,7 @@ public class LoginActivity extends BaseActivity{
                         }else{
                             PreferencesHelper.setMyUserPref(ctx, responseUser);
                             btnLogin.doneLoadingAnimation(getResources().getColor(R.color.transparent), BitmapFactory.decodeResource(getResources(),R.drawable.ic_done_white_48dp));
+                            btnLogin.revertAnimation();
                             next(MainActivity.class, true);
                         }
 
@@ -115,8 +113,7 @@ public class LoginActivity extends BaseActivity{
                 @Override
                 public void onFailure(Call<LoginResponse> call, Throwable t) {
                     btnLogin.revertAnimation();
-                    Toast.makeText(ctx, Constants.MJS_ERROR_CONEXION_SERVICIO,
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ctx, Constants.MJS_ERROR_CONEXION_SERVICIO, Toast.LENGTH_SHORT).show();
                     Log.e(Constants.ERROR, Constants.MJS_ERROR_CONEXION_SERVICIO);
                 }
             });

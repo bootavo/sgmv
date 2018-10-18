@@ -52,20 +52,19 @@
                         android:layout_centerHorizontal="true"
                         android:gravity="center_horizontal|center_vertical"/>
 
-                    <TextView
-                        android:id="@+id/tv_next"
+                    <ImageView
+                        android:id="@+id/ic_exit"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Siguiente"
-                        android:textColor="@color/secondary_text"
-                        android:textSize="@dimen/subtitle"
-                        android:textStyle="normal"
                         android:layout_marginRight="16dp"
+                        android:background="@drawable/ic_exit"
                         android:layout_alignParentRight="true"
-                        android:visibility="invisible"
+                        android:visibility="visible"
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
-                        android:gravity="center_vertical"/>
+                        android:gravity="center_vertical"
+                        android:layout_centerVertical="true"/>
 
                 </RelativeLayout>
 

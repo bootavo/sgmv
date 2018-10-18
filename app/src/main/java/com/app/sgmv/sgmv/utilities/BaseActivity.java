@@ -5,8 +5,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.app.sgmv.sgmv.R;
+import com.app.sgmv.sgmv.entities.failure.FailureReport;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 
@@ -52,6 +54,15 @@ public abstract class BaseActivity extends AppCompatActivity{
     }
 
     public void next(String name, String data, Class<?> activity, boolean isDestroy){
+
+        Intent intent = new Intent(this,activity);
+        if(data != null) intent.putExtra(name, data);
+        startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        if (isDestroy) finish();
+    }
+
+    public void next(String name, ArrayList<FailureReport> data, Class<?> activity, boolean isDestroy){
 
         Intent intent = new Intent(this,activity);
         if(data != null) intent.putExtra(name, data);
